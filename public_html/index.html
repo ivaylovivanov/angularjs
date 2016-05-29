@@ -39,6 +39,13 @@
         <input type="text" ng-model="car.plate" placeholder="What is the plate?" />
         <select ng-model="car.color" ng-options="color for color in colors"></select>
         <button ng-click="park(car)" ng-disabled="!car.plate || !car.color">Park</button>
-        <alert></alert>
+        <alert
+            ng-show="showAlert"
+            alert="alertTopic"
+            description="alertMessage"
+            close1="closeAlert()"
+            >
+                
+        </alert>
     </body>
 </html>

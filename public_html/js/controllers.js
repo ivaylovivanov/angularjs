@@ -1,8 +1,14 @@
 //registering the parking controller  to the paraking module
 parking.controller("parkingCtrl", function($scope){
 
-    $scope.appTitle = "Parking";
-
+   $scope.appTitle = "Parking";
+   
+   $scope.showAlert = true;
+   $scope.alertTopic = "Something went wrong!";
+   $scope.alertMessage = "You must inform the plate and the color of the car!";
+   $scope.closeAlert = function(){
+     $scope.showAlert = false;  
+   };
    //binding the cars array to the scope 
    $scope.cars = [
        {plate: '6MBV006', entrance: '1'},
@@ -18,4 +24,6 @@ parking.controller("parkingCtrl", function($scope){
      $scope.cars.push(car);
      delete $scope.car;
    };
+   
+   
 });
